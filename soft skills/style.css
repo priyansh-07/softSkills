@@ -23,13 +23,37 @@ header {
     height: 455px;
     float: left;
     border-right: solid 1px black;
-    margin-top: 5px;
-    padding-bottom: 3px;
+    margin-top: 5px;    
 }
+#labels-card {
+    width: 90%;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    border-top: solid 3px rgb(1, 71, 71);
+    margin-top: 0.6em;
+    border-radius: 0.5em;    
+}
+#labels {
+    width: 90%;
+    margin: auto;
+    margin-top: 3%; 
+}
+qno {
+    width: 33.33%;
+    float: left;
+}
+/*labels.qno {
+    border: solid 1px black;
+    width: 100%;
+    float: left;
+    margin: 2px;
+    height: 30px;
+    text-align: center;
+    padding-top: 5%;
+}*/
 #question-container {
     float: right;
     border: 2px black;
-    border-top: solid 3px darkcyan;
+    border-top: solid 3px rgb(1, 71, 71);
     margin-top: 1em;
     margin-bottom: 2em;
     width: 78%;
@@ -39,15 +63,7 @@ header {
 div p {
     margin-left: 1em;
 }
-.qno {
-    border: solid 1px black;
-    width: 22.5%;
-    float: left;
-    margin: 2px;
-    height: 30px;
-    text-align: center;
-    padding-top: 5%;
-}
+
 .radiobtn {
     margin-left: 2em;
     margin-bottom: 1em;    
@@ -60,6 +76,15 @@ div p {
     float: right;
     position: relative;
     right: 1em;	
+}
+.btn {
+    color: blanchedalmond;
+    background-color: darkcyan;
+    height: 3em;
+    border-radius: 1em;
+    font-weight: bold;
+    padding-right: 1em;
+    padding-left: 1em; 
 }
 footer {
     border-top: 5px solid rgb(1, 71, 71);
