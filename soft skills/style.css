@@ -1,26 +1,27 @@
 body {
     padding:0;
     margin:0;
+    background-color: rgba(243, 228, 207, 0.884); 
 }
 header {
     background-color: darkcyan;
     padding-top: 30px;
-    padding-bottom: 5px;
-    border-bottom: 5px solid rgb(1, 71, 71);
+    padding-bottom: 1em;
+    border-bottom: 5px solid rgb(1, 71, 71);    
 }
 #brand {
     color: beige;
-    text-align: center;
-    font-family: sans-serif; 
+    margin-left: 5em;
+    font-family: cinzel; 
     font-size: 30px;
 }
 #container {
     margin: auto;
-    width: 70%;
+    width: 80%;    
 }
 #nav {
     width: 20%;
-    height: 455px;
+    height: 465px;
     float: left;
     border-right: solid 1px black;
     margin-top: 5px;    
@@ -35,21 +36,24 @@ header {
 #labels {
     width: 90%;
     margin: auto;
-    margin-top: 3%; 
+    margin-top: 7%;       
+    height: 12em; 
 }
-qno {
-    width: 33.33%;
+.qno {
+    width: 31.25%;
+    height: 2em;
     float: left;
+    background-color: darkcyan;
+    color: white;
+    font-weight: bold; 
+    margin: 1%; 
+    padding-bottom: 10%;        
 }
-/*labels.qno {
-    border: solid 1px black;
-    width: 100%;
-    float: left;
-    margin: 2px;
-    height: 30px;
+.qno p {
+    position: absolute;    
+    transform: translate(50%, -5%);
     text-align: center;
-    padding-top: 5%;
-}*/
+}
 #question-container {
     float: right;
     border: 2px black;
@@ -86,10 +90,15 @@ div p {
     padding-right: 1em;
     padding-left: 1em; 
 }
+.btn:hover {
+    background-color: beige;
+    border: solid 1px darkcyan;
+    color: darkcyan;  
+}
 footer {
     border-top: 5px solid rgb(1, 71, 71);
     width:100%;
-    height: 80px;
+    height: 4em;
     background-color: darkcyan;
     position: absolute;
     bottom: 0;
