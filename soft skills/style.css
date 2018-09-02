@@ -1,12 +1,17 @@
+html {
+    height: 100%;
+}
 body {
     padding:0;
-    margin:0;     
+    margin:0; 
+    height: 80%;  
     background-color: #FFFFFF;
 }
 header {
     background-image: linear-gradient(141deg, #1fc8db 15%, #16bade 51%, #1e81f5 100%);
     padding-top: 30px;
     padding-bottom: 1em;
+    height: 3.2em;
     border-bottom: 5px solid rgb(1, 71, 71);    
 }
 #brand {
@@ -19,14 +24,16 @@ header {
 }
 #container {
     margin: auto;
-    width: 80%;    
+    width: 80%; 
+    height: 100%;   
 }
 #nav {
-    width: 20%;
-    height: 465px;
+    width: 20%;    
+    height: 100%;
     float: left;
-    border-right: solid 1px black;
-    margin-top: 5px;    
+    border-right: solid 3px rgb(1, 71, 71);
+    margin-top: 5px; 
+    margin-bottom: 5px; 
 }
 #labels-card {
     width: 90%;
@@ -83,15 +90,15 @@ div p {
 }
 #prev {
 	float: left;
-	margin-left: 2em;
+	margin-left: 4em;
 }
 #next {
     float: right;
     position: relative;
-    right: 1em;	
+    right: 4em;	
 }
 .btn {
-    color: blanchedalmond;
+    color: #FFFFFF;
     background-color: #0fa5c7;
     height: 3em;
     border-radius: 3em;
@@ -110,8 +117,7 @@ footer {
     width:100%;
     height: 4em;    
     background-image: linear-gradient(141deg, #1e81f5 0%, #16bade 51%, #1fc8db 90%);
-    position: absolute;
-    bottom: 0;
+    clear: both;
     text-align: center;
     color: beige;
     font-family: 'Yatra One', cursive; 
