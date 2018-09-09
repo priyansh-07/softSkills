@@ -4,9 +4,10 @@
 	<title>REASONING</title>
 	<meta name="viewport" content="width=device-width initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="grid_style.css">
-	<link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+    <script src="script.js"></script>     
 </head>
-<body>
+<body onload="initialize()">
     <div id="grid">
         <header id="header"><span id="brand">REASONING TEST</span></header>		
         <div id="container">
@@ -31,11 +32,8 @@
             <div id="main">
                 <div id="question-container"> 
                     <form>
-                        <p>
-                            Q1. dfkdu djus sjncisnd vvkd dnsifd?<br>
+                        <p id="question">
                             
-                            
-
                         </p>
                         <input type="radio" class="radiobtn" name="option">OptionA<br>
                         <input type="radio" class="radiobtn" name="option">OptionB<br>
@@ -44,8 +42,8 @@
                                 
                     </form>
                 </div>
-                <input type="button" id="prev" class="btn" value="PREVIOUS">
-                <input type="button" id="next" class="btn" value="NEXT">
+                <input type="button" id="prev" class="btn" value="PREVIOUS" onclick="prev(), display()">
+                <input type="button" id="next" class="btn" value="NEXT" onclick="next(), display()">
             </div>    	
         </div>
         <footer id="footer">Footer</footer>	

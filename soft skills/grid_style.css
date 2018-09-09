@@ -4,7 +4,7 @@ html, body {
     width: 100%;
     height: 100%;
     display: grid;
-    
+    background-color: #FFFFFF;
 }
 #grid {
     width: 100%;
@@ -68,12 +68,13 @@ html, body {
        and disable the above border property
     border: solid 1px #4CAF50;    
     background-color: #4CAF50;*/
-    border-radius: 0.5em;            
+    border-radius: 0.5em;
+    text-align: center;             
 }
 .qno p {
-    position: absolute;    
-    transform: translate(50%, -5%);
-    text-align: center;
+    position: relative;
+    transform: translate(0%, 110%);
+    margin: auto;
 }
 #main {
     float: left;
@@ -92,6 +93,7 @@ html, body {
 }
 div p {
     margin-left: 1em;
+    margin-right: 3em;
 }
 .radiobtn {
     margin-left: 2em;
@@ -115,14 +117,21 @@ div p {
     padding-right: 1em;
     padding-left: 1em;
     border: none;
-    margin-bottom: 2em;    
+    margin-bottom: 2em;
+    font-size: 0.8em;    
 }
 .btn:hover {
-    background-color: beige;
-    border: solid 1px #0fa5c7;
-    color: #0fa5c7;  
+    background-color: #0d85a0;    
+    color: beige;  
 }
-
+.btn:focus {
+    outline: none;
+}
+.btn:active {
+    background-color: beige;
+    color: #0fa5c7;
+    border: solid 1px #0fa5c7;  
+}
 #footer {
     border-top: 5px solid rgb(1, 71, 71);
     width:100%;
