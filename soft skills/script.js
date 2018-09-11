@@ -43,19 +43,32 @@ var questions = [
     SCD, TEF, UGH, ____, WKL\ "
 ];
 var options = [
-    ["A. (1/3)", "B. (1/8)", "C. (2/8)", "D. (1/16)"],
-    ["A. 11 5", "B. 10 7", "C. 11 8", "D. 5 10"],
-    ["A. 25 22", "B. 26 23", "C. 26 24", "D. 25 23"],
-    ["A. gorbltusl", "B. flurgorbl", "C. arthflur", "D. pixnarth"],
-    ["A. gemogila", "B. gerigeme", "C. gemomitu", "D. gerimita"],
-    ["A. True", "B. False", "C. uncertain", "D. No u"],
-    ["A. True", "B. False", "C. uncertain", "D. No u"],
-    ["A. True", "B. False", "C. uncertain", "D. No u"],
-    ["A. CMN", "B. UJI", "C. VIJ", "D. IJT"]
+    [" (1/3)", " (1/8)", " (2/8)", " (1/16)"],
+    [" 11 5", " 10 7", " 11 8", " 5 10"],
+    [" 25 22", " 26 23", " 26 24", " 25 23"],
+    [" gorbltusl", " flurgorbl", " arthflur", " pixnarth"],
+    [" gemogila", " gerigeme", " gemomitu", " gerimita"],
+    [" True", " False", " uncertain", " No u"],
+    [" True", " False", " uncertain", " No u"],
+    [" True", " False", " uncertain", " No u"],
+    [" CMN", " UJI", " VIJ", " IJT"]
 ];
-var correct_option = ["B", "A", "C", "D", "A", "B", "B", "A", "C"];
-var current = 0;
+//multidimensional array for marks given to each option
+//[0][1] corresponds to question 1(index 0) option 2(index 1) 
+var marks = [
+    [ 4, 5, 3, 2], [ 5, 4, 3, 2], [ 4, 3, 5, 2],
+    [ 4, 3, 2, 5], [ 5, 4, 3, 2], [ 4, 5, 3, 2],
+    [ 4, 5, 3, 2], [ 5, 4, 3, 2], [ 4, 3, 5, 2] 
+];
 
+var current = 0;
+var checkedOption = -1;
+
+function display_options(a) {
+    var radio_buttons = document.getElementsByClassName('optn');
+    for (i=0; i<4; i++) 
+    radio_buttons[i].innerHTML = options[a][i];    
+}
 
 function initialize() {
     current=0;
@@ -63,6 +76,7 @@ function initialize() {
     question.innerHTML = "Q."+(current+1)+" "+questions[current];
     document.getElementById('prev').style.backgroundColor = "#83bac7";
     document.getElementById('prev').disabled = true;
+    display_options(current);    
 }
 function next() {    
     current+=1;            
@@ -70,7 +84,11 @@ function next() {
 function prev() {
     current-=1;
 }
+function submit(a) {
+    checkedOption = a;
+}
 function display() {
+    //disabling the previous button if it's the 1st question and enabling it if it isn't   
     console.log("current = "+current+"\n");
     if (current!=0) {
         document.getElementById('prev').disabled = false;
@@ -79,11 +97,32 @@ function display() {
     else {
         document.getElementById('prev').style.backgroundColor = "#83bac7";
         document.getElementById('prev').disabled = true;
-    }        
+    }
+
+    //displaying the questions and options 
     var question = document.getElementById("question");
     question.innerHTML = "Q."+(current+1)+" "+questions[current];
+    display_options(current);
+    
+    //here's what you gotta do :
+    //i have created a submit function which will set the value of "checkedOption" variable to
+    //the corresponding number i.e, 0 if user selects first option, 1 if user selects 2nd option
+    //take care of the indexing, it starts from 0
+    //store that number in an array for every question
+    //the numbers stored in that array will act as indexes for the 2nd dimension in the "marks" matrix
+    //1st dimension being the question number
+    //=====================YOUR CODE HERE=======================
+    
+    
 
 
+
+
+
+
+    //==========================================================
+
+    //disabling the next button if it's the 8th question and enabling it if it isn't   
     if (current==8) {
         document.getElementById('next').style.backgroundColor = "#83bac7";
         document.getElementById("next").disabled = true;

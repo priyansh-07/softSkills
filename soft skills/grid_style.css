@@ -90,6 +90,7 @@ html, body {
     margin-bottom: 2em;    
     border-radius: 15px 50px 50px 5px;
     box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+    height: 300px;
 }
 div p {
     margin-left: 1em;
@@ -98,6 +99,11 @@ div p {
 .radiobtn {
     margin-left: 2em;
     margin-bottom: 1em;    
+}
+.optn  {
+    display: inline-block;
+    margin: 0 0 0 1em;
+    padding: 0;
 }
 #prev {
 	float: left;
