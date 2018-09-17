@@ -63,6 +63,8 @@ var marks = [
 
 var current = 0;
 var checkedOption = -1;
+var answers = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+var tiles = document.getElementsByClassName('qno');
 
 function display_options(a) {
     var radio_buttons = document.getElementsByClassName('optn');
@@ -84,12 +86,19 @@ function next() {
 function prev() {
     current-=1;
 }
-function submit(a) {
+function sub(a) {
     checkedOption = a;
+    answers[current] = checkedOption;
+    tiles[current].style.backgroundColor="#4CAF50";    
+    tiles[current].style.border="solid 1px #4CAF50";
+    tiles[current].style.color="#ffffff";
+    tiles[current].style.fontWeight="bold";        
 }
 function display() {
     //disabling the previous button if it's the 1st question and enabling it if it isn't   
     console.log("current = "+current+"\n");
+    console.log("answers : "+answers);
+    displayRadio();
     if (current!=0) {
         document.getElementById('prev').disabled = false;
         document.getElementById('prev').style.backgroundColor = "#0fa5c7";
@@ -132,3 +141,51 @@ function display() {
         document.getElementById("next").disabled = false;
     }        
 }
+function displayRadio () {
+    if (answers[current] == -1) {
+        document.getElementById('r0').checked = false;
+        document.getElementById('r1').checked = false;
+        document.getElementById('r2').checked = false;
+        document.getElementById('r3').checked = false;
+    }
+    else {
+        switch(answers[current]) {
+            case 0: document.getElementById('r0').checked = true;
+                    break;
+            case 1: document.getElementById('r1').checked = true;
+                    break;
+            case 2: document.getElementById('r2').checked = true;
+                    break;
+            case 3: document.getElementById('r3').checked = true;
+                    break;            
+        }
+    }
+}
+function submission() {
+    for (var i=0; i<9; i++) {
+        if (answers[i]==-1) {
+            if (confirm("You haven't attempted all the questions. Are you sure you want to submit?")) {
+                evaluate();
+                return;
+            }
+        }
+        else {
+            evaluate();
+        } 
+    }
+}
+function evaluate() {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+

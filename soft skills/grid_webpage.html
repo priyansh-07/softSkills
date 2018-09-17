@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
     <script src="script.js"></script>     
 </head>
-<body onload="initialize()">
+<body onload="initialize()">    
     <div id="grid">
         <header id="header"><span id="brand">REASONING TEST</span></header>		
         <div id="container">
@@ -32,21 +32,22 @@
             <div id="main">
                 <div id="question-container"> 
                     <form>
-                        <p id="question">
-                            
+                        <p id="question">                            
+
                         </p>
-                        <input type="radio" class="radiobtn" name="o" onclick="submit(0)"><p class="optn"></p><br>
-                        <input type="radio" class="radiobtn" name="o" onclick="submit(1)"><p class="optn"></p><br>
-                        <input type="radio" class="radiobtn" name="o" onclick="submit(2)"><p class="optn"></p><br>
-                        <input type="radio" class="radiobtn" name="o" onclick="submit(3)"><p class="optn"></p><br>
-                                
+                        <input type="radio" class="radiobtn" name="o" onclick="sub(0)" id="r0"><p class="optn"></p><br>
+                        <input type="radio" class="radiobtn" name="o" onclick="sub(1)" id="r1"><p class="optn"></p><br>
+                        <input type="radio" class="radiobtn" name="o" onclick="sub(2)" id="r2"><p class="optn"></p><br>
+                        <input type="radio" class="radiobtn" name="o" onclick="sub(3)" id="r3"><p class="optn"></p><br>
+
                     </form>
                 </div>
                 <input type="button" id="prev" class="btn" value="PREVIOUS" onclick="prev(), display()">
+                <input type="button" id="submit-btn" class="btn" value="SUBMIT" onclick="submission()">
                 <input type="button" id="next" class="btn" value="NEXT" onclick="next(), display()">
             </div>    	
         </div>
-        <footer id="footer">Footer</footer>	
-    </div>    
+        <footer id="footer">Footer</footer>
+    </div>  
 </body>
 </html>
