@@ -6,15 +6,6 @@ html, body {
     display: grid;
     background-color: #FFFFFF;
 }
-#bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    -webkit-clip-path: polygon(60% 77%, 100% 40%, 100% 100%, 0% 100%);
-    clip-path: polygon(60% 77%, 100% 40%, 100% 100%, 0% 100%);
-    z-index: -1;
-    background-color: #226dbc;
-}
 #grid {
     width: 100%;
     height: 100%;
@@ -153,7 +144,7 @@ div p {
 #footer {
     border-top: 5px solid rgb(1, 71, 71);
     width:100%;
-    height: 4em;    
+    height: 6em;    
     background-image: linear-gradient(141deg, #1e81f5 0%, #16bade 51%, #1fc8db 90%);
     clear: both;
     text-align: center;
@@ -161,5 +152,11 @@ div p {
     font-family: 'Yatra One', cursive; 
     font-weight: bold;
     position: absolute;
-    bottom: 0;
+    bottom: 0;    
+}
+pre {
+    float: right;
+    margin-right: 10em;
+    color: rgb(1, 71, 71);
+    font-size: 1.25em; 
 }

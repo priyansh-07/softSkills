@@ -65,6 +65,7 @@ var current = 0;
 var checkedOption = -1;
 var answers = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
 var tiles = document.getElementsByClassName('qno');
+var total=0;
 
 function display_options(a) {
     var radio_buttons = document.getElementsByClassName('optn');
@@ -111,27 +112,8 @@ function display() {
     //displaying the questions and options 
     var question = document.getElementById("question");
     question.innerHTML = "Q."+(current+1)+" "+questions[current];
-    display_options(current);
-    
-    //here's what you gotta do :
-    //i have created a submit function which will set the value of "checkedOption" variable to
-    //the corresponding number i.e, 0 if user selects first option, 1 if user selects 2nd option
-    //take care of the indexing, it starts from 0
-    //store that number in an array for every question
-    //the numbers stored in that array will act as indexes for the 2nd dimension in the "marks" matrix
-    //1st dimension being the question number
-    //=====================YOUR CODE HERE=======================
-    
-    
-
-
-
-
-
-
-    //==========================================================
-
-    //disabling the next button if it's the 8th question and enabling it if it isn't   
+    display_options(current);    
+  
     if (current==8) {
         document.getElementById('next').style.backgroundColor = "#83bac7";
         document.getElementById("next").disabled = true;
@@ -165,27 +147,50 @@ function submission() {
     for (var i=0; i<9; i++) {
         if (answers[i]==-1) {
             if (confirm("You haven't attempted all the questions. Are you sure you want to submit?")) {
+                
                 evaluate();
                 return;
             }
+            else
+                return;
+        }
+    }
+    evaluate();
+}
+
+function evaluate() {
+    var score=new Array();    
+    for (var i=0; i<9; i++) {
+        if (answers[i]==-1) {
+            score[i] = 0;
+            continue; 
         }
         else {
-            evaluate();
-        } 
+            score[i] = marks[i][answers[i]];
+            total = total + score[i]; 
+        }
     }
+    console.log('\n'+score);
+    console.log('\n'+total);
+    displayResult();
 }
-function evaluate() {
+
+function displayResult() {
+    document.getElementById('nav').parentNode.removeChild(document.getElementById('nav'));
+    document.getElementById('form').parentNode.removeChild(document.getElementById('form'));
+    document.getElementById('prev').parentNode.removeChild(document.getElementById('prev'));
+    document.getElementById('next').parentNode.removeChild(document.getElementById('next'));
+    document.getElementById('submit-btn').parentNode.removeChild(document.getElementById('submit-btn'));
     
+    var elem=document.getElementById('main');
+    elem.style.width='100%';    
+
+    var para=document.createElement("p");
+    var node=document.createTextNode("Your score is "+total+"!!");
+    para.appendChild(node);
+    para.style.fontSize='20px';
+    document.getElementById('question-container').appendChild(para);
+
+    
+         
 }
-
-
-
-
-
-
-
-
-
-
-
-
